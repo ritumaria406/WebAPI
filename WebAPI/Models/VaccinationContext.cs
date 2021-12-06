@@ -11,6 +11,10 @@ namespace WebAPI.Models
         public VaccinationContext(DbContextOptions<VaccinationContext> options) :base(options)
         {            
         }
+
+        //Ensure the DBSet variable name is same as the table name in the DB
         public DbSet<VaccinationRequest> VaccinationRequest { get; set; }
+
+        public DbSet<CountryDetails> Countries { get; set; }
     }
 }

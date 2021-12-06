@@ -47,5 +47,25 @@ namespace WebAPI.Repositories
             _context.Entry(vaccine).State = EntityState.Modified;
              await _context.SaveChangesAsync();
         }
+
+
+        public async Task<CountryDetails> CreateCountry(CountryDetails country)
+        {
+            _context.Countries.Add(country);
+            await _context.SaveChangesAsync();
+
+            return country;
+        }
+
+        public async Task<IEnumerable<CountryDetails>> GetCountryDetails()
+        {
+            return await _context.Countries.ToListAsync();
+        }
+
+
+        public async Task<CountryDetails> GetCountryById(int countryId)
+        {
+            return await _context.Countries.FindAsync(countryId);
+        }
     }
 }

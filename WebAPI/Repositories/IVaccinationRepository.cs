@@ -17,5 +17,11 @@ namespace WebAPI.Repositories
         Task UpdateVaccination(VaccinationRequest vaccine);
 
         Task DeleteVaccination(int id);
+
+        Task<IEnumerable<CountryDetails>> GetCountryDetails();
+
+        Task<CountryDetails> CreateCountry(CountryDetails country);
+
+        Task<CountryDetails> GetCountryById(int countryId);
     }
 }

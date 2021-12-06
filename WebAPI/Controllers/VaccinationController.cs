@@ -58,8 +58,8 @@ namespace WebAPI.Controllers
         public async Task<ActionResult<VaccinationRequest>> PostVaccination([FromBody] VaccinationRequest vaccine)
         {
             if (ModelState.IsValid) {
-                var newBook = await _vaccinationRepository.CreateVaccination(vaccine);
-                return CreatedAtAction(nameof(GetVaccination), new { id = newBook.VaccinationId }, newBook);
+                var newVaccine = await _vaccinationRepository.CreateVaccination(vaccine);
+                return CreatedAtAction(nameof(GetVaccination), new { id = newVaccine.VaccinationId }, newVaccine);
             }
             return BadRequest();
         }
