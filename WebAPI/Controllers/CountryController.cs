@@ -14,6 +14,7 @@ namespace WebAPI.Controllers
     public class CountryController : Controller
     {
 
+        //Vaccination Repo has details for country
         private readonly IVaccinationRepository _vaccinationRepository;
 
         public CountryController(IVaccinationRepository vaccinationRepository)
